@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "nrwl.angular-console",
+    "angular.ng-template",
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "esbenp.prettier-vscode",
+    "SonarSource.sonarlint-vscode",
+    "johnpapa.Angular2",
+    "christian-kohler.path-intellisense",
+    "wix.vscode-import-cost"
+  ]
+}

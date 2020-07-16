@@ -1,0 +1,35 @@
+{
+  // Format js and ts files on save with
+  // Please install https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode to take advantage of `prettier` in VSCode.
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+
+  "prettier.singleQuote": true,
+
+  // Exclude third party modules and build artifacts from the editor watchers/searches.
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/bazel-out/**": true,
+    "**/dist/**": true,
+    "**/aio/src/generated/**": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/bazel-out": true,
+    "**/dist": true,
+    "**/aio/src/generated": true
+  },
+  "git.ignoreLimitWarning": true
+}
