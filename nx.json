@@ -1,0 +1,24 @@
+{
+  "npmScope": "app",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "angular-template": {
+      "tags": [],
+      "implicitDependencies": [
+        "styles"
+      ]
+    },
+    "styles": {
+      "tags": []
+    },
+    "section-auth": {
+      "tags": []
+    }
+  }
+}
