@@ -15,10 +15,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "types": ["node", "jest"],
     "paths": {
-      "@app/styles": ["libs/styles/src/index.ts"],
       "@app/section/auth": ["libs/section/auth/src/index.ts"]
     }
   },
+  "include": ["**/*.ts"],
   "exclude": ["node_modules", "tmp"]
 }

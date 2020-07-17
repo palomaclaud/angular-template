@@ -12,7 +12,7 @@
   "dependencies": {
     "@angular-devkit/build-angular": "~0.901.7",
     "@angular/animations": "~10.0.4",
-    "@angular/cli": "~10.0.3",
+    "@angular/cli": "^10.0.3",
     "@angular/common": "~10.0.4",
     "@angular/compiler": "~10.0.4",
     "@angular/compiler-cli": "~10.0.4",
@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "~10.0.4",
     "@angular/router": "~10.0.4",
     "@nrwl/angular": "^9.5.1",
-    "rxjs": "~6.5.5",
+    "rxjs": "~6.6.0",
     "tslib": "^1.10.0",
     "typescript": "~3.9.5",
     "zone.js": "~0.10.3"
@@ -33,7 +33,7 @@
     "@nrwl/jest": "^9.5.1",
     "@nrwl/linter": "^9.5.1",
     "@nrwl/workspace": "^9.5.1",
-    "@types/jest": "25.1.4",
+    "@types/jest": "^25.1.4",
     "@types/lodash-es": "^4.17.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
