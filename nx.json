@@ -10,9 +10,7 @@
   "projects": {
     "angular-template": {
       "tags": [],
-      "implicitDependencies": [
-        "styles"
-      ]
+      "implicitDependencies": ["styles"]
     },
     "styles": {
       "tags": []

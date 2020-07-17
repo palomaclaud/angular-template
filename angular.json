@@ -21,13 +21,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/styles/src"]
+            },
             "scripts": []
           },
           "configurations": {
@@ -79,32 +77,18 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@nrwl/jest:jest",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
+            "jestConfig": "apps/asset-management/jest.config.js",
+            "tsConfig": "apps/asset-management/tsconfig.spec.json",
+            "setupFile": "apps/asset-management/src/test-setup.ts"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -122,10 +106,7 @@
               "libs/section/auth/tsconfig.lib.json",
               "libs/section/auth/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/section/auth/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/section/auth/**/*"]
           }
         },
         "test": {
@@ -133,7 +114,6 @@
           "options": {
             "jestConfig": "libs/section/auth/jest.config.js",
             "tsConfig": "libs/section/auth/tsconfig.spec.json",
-            "passWithNoTests": true,
             "setupFile": "libs/section/auth/src/test-setup.ts"
           }
         }
@@ -143,6 +123,12 @@
           "style": "scss"
         }
       }
+    },
+    "styles": {
+      "root": "libs/styles",
+      "sourceRoot": "libs/styles/src",
+      "projectType": "library",
+      "schematics": {}
     }
   },
   "defaultProject": "angular-template"
