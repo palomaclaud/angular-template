@@ -1,0 +1,7 @@
+@import './libs/libs.partials';
+
+@mixin app-partials() {
+  $theme: none;
+
+  @include app-libs-partials($theme);
+}
