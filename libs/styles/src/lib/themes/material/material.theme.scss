@@ -1,0 +1,13 @@
+@import './config/colors.config.scss';
+@import '../../partials/partials.scss';
+@import '../../fonts/fonts.scss';
+@import '../../sections/sections.scss';
+
+@mixin app-material-theme() {
+  $theme-colors: app-material-theme-colors();
+
+  @include angular-material-theme($theme-colors);
+
+  @include app-partials($theme-colors);
+  @include app-sections($theme-colors);
+}
