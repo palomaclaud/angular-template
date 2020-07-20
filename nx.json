@@ -17,6 +17,12 @@
     },
     "section-auth": {
       "tags": []
+    },
+    "state-router": {
+      "tags": []
+    },
+    "state-layout": {
+      "tags": []
     }
   }
 }

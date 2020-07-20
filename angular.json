@@ -129,6 +129,70 @@
       "sourceRoot": "libs/styles/src",
       "projectType": "library",
       "schematics": {}
+    },
+    "state-router": {
+      "projectType": "library",
+      "root": "libs/state/router",
+      "sourceRoot": "libs/state/router/src",
+      "prefix": "app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/state/router/tsconfig.lib.json",
+              "libs/state/router/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/state/router/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/state/router/jest.config.js",
+            "tsConfig": "libs/state/router/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/state/router/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "state-layout": {
+      "projectType": "library",
+      "root": "libs/state/layout",
+      "sourceRoot": "libs/state/layout/src",
+      "prefix": "app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/state/layout/tsconfig.lib.json",
+              "libs/state/layout/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/state/layout/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/state/layout/jest.config.js",
+            "tsConfig": "libs/state/layout/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/state/layout/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "defaultProject": "angular-template"

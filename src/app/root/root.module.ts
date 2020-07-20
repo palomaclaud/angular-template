@@ -9,11 +9,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { RootStateModule } from '../root/state/root.state.module';
 import { RootComponent } from './root.component';
 import { NavigationComponent } from './views/navigation/navigation.component';
+import { MenuComponent } from './views/menu/menu.component';
+import { ToolbarComponent } from './views/toolbar/toolbar.component';
 
 @NgModule({
-  declarations: [RootComponent, NavigationComponent],
+  declarations: [RootComponent, NavigationComponent, MenuComponent, ToolbarComponent],
   imports: [
     /** Angular Modules */
     CommonModule,
@@ -22,6 +25,7 @@ import { NavigationComponent } from './views/navigation/navigation.component';
     /** Firebase Modules */
 
     /** State Module */
+    RootStateModule,
 
     /** Material Modules */
     MatToolbarModule,
