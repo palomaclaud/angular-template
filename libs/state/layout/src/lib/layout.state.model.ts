@@ -10,8 +10,10 @@ export namespace LayoutStateModel {
   }
 
   export interface Selected {
-    theme: string;
+    theme: Theme;
   }
+
+  export type Theme = 'normal' | 'dark';
 
   export type PageOrientation = 'landscape' | 'portrait';
 
@@ -21,7 +23,7 @@ export namespace LayoutStateModel {
         orientation: undefined,
         isHandset: undefined,
       },
-      selected: { theme: undefined },
+      selected: { theme: 'normal' },
     };
   }
 }

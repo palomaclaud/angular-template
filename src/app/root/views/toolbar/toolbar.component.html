@@ -1,16 +1,30 @@
 <div class="toolbar">
   <mat-toolbar color="primary">
-    <button
-      type="button"
-      aria-label="Toggle sidenav"
-      mat-icon-button
-      (click)="drawer.toggle()"
-      *ngIf="$isHandset | async"
-    >
-      <mat-icon aria-label="Side nav toggle icon"> menu </mat-icon>
-    </button>
-    <span>
-      Angular Template
-    </span>
+    <div class="d-flex w-100">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="$isHandset | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon"> menu </mat-icon>
+      </button>
+
+      <span class="flex-grow-1">
+        Angular Template
+      </span>
+
+      <div>
+        <button
+          type="button"
+          aria-label="Theme toggle"
+          mat-mini-fab
+          (click)="changeTheme()"
+        >
+          <mat-icon aria-label="Theme toggle icon"> invert_colors </mat-icon>
+        </button>
+      </div>
+    </div>
   </mat-toolbar>
 </div>

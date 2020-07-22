@@ -27,7 +27,7 @@ export class LayoutState {
 
   @Action([LayoutStateActions.ObserveOrientation])
   @ImmutableContext()
-  ObserveOrientation({ setState }: StateContext<LayoutStateModel.State>) {
+  ObserveOrientation({ setState }: StateContext<LayoutStateModel.State>): void {
     const killCondition = merge(
       this.actions$.pipe(
         ofActionDispatched(LayoutStateActions.ObserveOrientation)
@@ -69,7 +69,7 @@ export class LayoutState {
 
   @Action([LayoutStateActions.ObserveHandset])
   @ImmutableContext()
-  ObserveHandset({ setState }: StateContext<LayoutStateModel.State>) {
+  ObserveHandset({ setState }: StateContext<LayoutStateModel.State>): void {
     const killCondition = merge(
       this.actions$.pipe(ofActionDispatched(LayoutStateActions.ObserveHandset))
     ).pipe(take(1));
@@ -94,7 +94,7 @@ export class LayoutState {
   SetSelectedTheme(
     { setState }: StateContext<LayoutStateModel.State>,
     { payload }: LayoutStateActions.SetSelectedTheme
-  ) {
+  ): void {
     const { theme } = payload;
 
     setState((state) => {

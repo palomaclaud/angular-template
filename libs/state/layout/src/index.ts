@@ -1,3 +1,4 @@
+export * from './/lib/layout.state.actions';
 export * from './lib/layout.state';
 export * from './lib/layout.state.model';
 export * from './lib/layout.state.selectors';

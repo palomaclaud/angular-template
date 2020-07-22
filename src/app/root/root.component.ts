@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LayoutStateService } from '@app/state/layout';
+import { LayoutStateSelectors, LayoutStateService } from '@app/state/layout';
+import { Select } from '@ngxs/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +9,12 @@ import { LayoutStateService } from '@app/state/layout';
   styleUrls: ['./root.component.scss'],
 })
 export class RootComponent implements OnInit {
+  @Select(LayoutStateSelectors.selectedTheme)
+  $selectedTheme: Observable<string>;
+
   constructor(private layoutService: LayoutStateService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.layoutService.observeOrientation();
     this.layoutService.observeHandset();
   }

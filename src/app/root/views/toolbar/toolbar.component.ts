@@ -1,7 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { LayoutStateSelectors } from '@app/state/layout';
-import { Select } from '@ngxs/store';
+import {
+  LayoutStateModel,
+  LayoutStateSelectors,
+  LayoutStateService,
+} from '@app/state/layout';
+import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -16,7 +20,20 @@ export class ToolbarComponent implements OnInit {
   @Select(LayoutStateSelectors.isHandset)
   $isHandset: Observable<boolean>;
 
-  constructor() {}
+  constructor(
+    private store: Store,
+    private layoutService: LayoutStateService
+  ) {}
 
   ngOnInit(): void {}
+
+  changeTheme(): void {
+    const selectedTheme = this.store.selectSnapshot(
+      LayoutStateSelectors.selectedTheme
+    );
+
+    const newTheme: LayoutStateModel.Theme =
+      selectedTheme !== 'dark' ? 'dark' : 'normal';
+    this.layoutService.setSelectedTheme(newTheme);
+  }
 }

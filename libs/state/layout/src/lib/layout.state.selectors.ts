@@ -17,4 +17,10 @@ export class LayoutStateSelectors {
   static isHandset(state: LayoutStateModel.State): boolean {
     return state.mediaQuery.isHandset;
   }
+
+  @Selector([LayoutState])
+  @ImmutableSelector()
+  static selectedTheme(state: LayoutStateModel.State): string {
+    return state.selected.theme;
+  }
 }

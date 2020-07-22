@@ -1,4 +1,3 @@
-import { BreakpointObserver } from '@angular/cdk/layout';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { LayoutStateSelectors } from '@app/state/layout';
 import { RouterStateSelector } from '@app/state/router';
@@ -18,5 +17,5 @@ export class NavigationComponent {
   @Select(LayoutStateSelectors.isHandset)
   $isHandset: Observable<boolean>;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor() {}
 }

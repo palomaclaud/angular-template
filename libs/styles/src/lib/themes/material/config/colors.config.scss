@@ -3,6 +3,7 @@
 @import './palette.orange';
 @import './palette.light-green';
 @import './palette.red';
+@import './palette.gray';
 
 @import './palette.background';
 @import './palette.foreground';
@@ -10,6 +11,23 @@
 // Available color palettes: https://material.io/design/color/
 @function app-material-theme-colors() {
   $primary-color: mat-palette($light-green-palette, 700, B100, B200);
+  $accent-color: mat-palette($orange-palette, 900, B100, B200);
+  $warn-color: mat-palette($red-palette);
+
+  $theme: mat-light-theme($primary-color, $accent-color, $warn-color);
+  $theme: map-merge(
+    $theme,
+    (
+      'background': $background-palette,
+      'foreground': $foreground-palette,
+    )
+  );
+
+  @return $theme;
+}
+
+@function dark-material-theme-colors() {
+  $primary-color: mat-palette($gray-palette, 900, B100, B200);
   $accent-color: mat-palette($orange-palette, 900, B100, B200);
   $warn-color: mat-palette($red-palette);
 

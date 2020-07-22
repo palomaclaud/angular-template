@@ -4,10 +4,14 @@
 @import '../../sections/sections.scss';
 
 @mixin app-material-theme() {
-  $theme-colors: app-material-theme-colors();
+  $app-theme: app-material-theme-colors();
+  @include angular-material-theme($app-theme);
 
-  @include angular-material-theme($theme-colors);
+  .theme-dark {
+    $dark-theme: dark-material-theme-colors();
+    @include angular-material-color($dark-theme);
+  }
 
-  @include app-partials($theme-colors);
-  @include app-sections($theme-colors);
+  @include app-partials($app-theme);
+  @include app-sections($app-theme);
 }
