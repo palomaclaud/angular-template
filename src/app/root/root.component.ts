@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class RootComponent implements OnInit {
   @Select(LayoutStateSelectors.selectedTheme)
-  $selectedTheme: Observable<string>;
+  selectedTheme$: Observable<string>;
 
   constructor(private layoutService: LayoutStateService) {}
 

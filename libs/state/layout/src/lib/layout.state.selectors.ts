@@ -1,26 +1,36 @@
-import { ImmutableSelector } from '@ngxs-labs/immer-adapter';
 import { Selector } from '@ngxs/store';
 import { LayoutState } from './layout.state';
 import { LayoutStateModel } from './layout.state.model';
 
 export class LayoutStateSelectors {
   @Selector([LayoutState])
-  @ImmutableSelector()
-  static query_orientation(
+  protected static root_mediaQuery(
     state: LayoutStateModel.State
+  ): LayoutStateModel.MediaQuery {
+    return state.mediaQuery;
+  }
+
+  @Selector([LayoutState])
+  protected static root_selected(
+    state: LayoutStateModel.State
+  ): LayoutStateModel.Selected {
+    return state.selected;
+  }
+
+  @Selector([LayoutStateSelectors.root_mediaQuery])
+  static query_orientation(
+    mediaQuery: LayoutStateModel.MediaQuery
   ): LayoutStateModel.PageOrientation {
-    return state.mediaQuery.orientation;
+    return mediaQuery.orientation;
   }
 
-  @Selector([LayoutState])
-  @ImmutableSelector()
-  static isHandset(state: LayoutStateModel.State): boolean {
-    return state.mediaQuery.isHandset;
+  @Selector([LayoutStateSelectors.root_mediaQuery])
+  static isHandset(mediaQuery: LayoutStateModel.MediaQuery): boolean {
+    return mediaQuery.isHandset;
   }
 
-  @Selector([LayoutState])
-  @ImmutableSelector()
-  static selectedTheme(state: LayoutStateModel.State): string {
-    return state.selected.theme;
+  @Selector([LayoutStateSelectors.root_selected])
+  static selectedTheme(selected: LayoutStateModel.Selected): string {
+    return selected.theme;
   }
 }

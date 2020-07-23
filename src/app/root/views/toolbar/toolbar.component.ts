@@ -18,7 +18,7 @@ export class ToolbarComponent implements OnInit {
   drawer: MatSidenav;
 
   @Select(LayoutStateSelectors.isHandset)
-  $isHandset: Observable<boolean>;
+  isHandset$: Observable<boolean>;
 
   constructor(
     private store: Store,

@@ -15,7 +15,7 @@ export class NavigationComponent {
   $url: Observable<string>;
 
   @Select(LayoutStateSelectors.isHandset)
-  $isHandset: Observable<boolean>;
+  isHandset$: Observable<boolean>;
 
   constructor() {}
 }
